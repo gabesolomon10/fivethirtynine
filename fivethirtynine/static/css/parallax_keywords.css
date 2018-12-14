@@ -1,0 +1,143 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+
+html {
+  height: 100%;
+  overflow: hidden;
+  font-family: Oswald;
+}
+
+body {
+  margin:0;
+  padding:0;
+	perspective: 1px;
+	transform-style: preserve-3d;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-family: Oswald
+
+}
+
+h1 {
+   font-size: 250%;
+   font-family: Oswald
+
+}
+
+h2 {
+   font-size: 150%;
+   font-family: Oswald
+
+}
+
+p {
+  font-size: 140%;
+  line-height: 150%;
+  color: #333;
+  font-family: Oswald
+
+}
+
+.slide {
+  position: relative;
+  padding: 25vh 10%;
+  min-height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  box-shadow: 0 -1px 10px rgba(0, 0, 0, .7);
+	transform-style: inherit;
+  font-family: Oswald
+}
+
+img {
+  position: absolute;
+  top: 50%;
+  left: 35%;
+  width: 320px;
+  height: 240px;
+  transform: translateZ(.25px) scale(.75) translateX(-94%) translateY(-100%) rotate(2deg);
+  padding: 10px;
+  border-radius: 5px;
+  background: rgba(240,230,220, .7);
+  box-shadow: 0 0 8px rgba(0, 0, 0, .7);
+}
+
+img:last-of-type {
+  transform: translateZ(.4px) scale(.6) translateX(-104%) translateY(-40%) rotate(-5deg);
+}
+
+.slide:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 8px 1px rgba(0, 0, 0, .7);
+}
+
+.title {
+  width: 50%;
+  padding: 5%;
+  border-radius: 5px;
+  background: rgba(240,230,220, .7);
+  box-shadow: 0 0 8px rgba(0, 0, 0, .7);
+  font-family: Oswald;
+}
+
+.slide:nth-child(2n) .title {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.slide:nth-child(2n+1) .title {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.slide, .slide:before {
+  background: 50% 50% / cover;
+}
+
+.header {
+  text-align: center;
+  font-size: 175%;
+  color: #fff;
+  text-shadow: 0 2px 2px #000;
+  font-family: Oswald;
+}
+
+#title {
+  background-image: url("http://www.pewresearch.org/wp-content/uploads/sites/8/2016/07/PJ_2016.07.07_Modern-News-Consumer_0-01.png");
+  z-index:2;
+  font-family: Oswald;
+}
+
+#title h1 {
+ transform: translateZ(.25px) scale(.75);
+ transform-origin: 50% 100%;
+ font-family: Oswald;
+
+}
+
+#slide1:before {
+  background-image: url("https://images.axios.com/YWMPTIF_Za_LAeU4cHUJwxe1R0M=/1920x1080/smart/2017/12/15/1513303959471.png");
+  transform: translateZ(-1px) scale(2);
+  font-family: Oswald;
+}
+
+#slide2 {
+  background-image: url("https://i1.wp.com/www.sainteldaily.com/wp-content/uploads/2018/01/new-york-times.jpg?resize=980%2C980");
+  z-index:2;
+  font-family: Oswald;
+}
+
+#slide3:before {
+  background-image: url("https://i1.wp.com/www.sainteldaily.com/wp-content/uploads/2018/01/new-york-times.jpg");
+  transform: translateZ(-1px) scale(2);
+  font-family: Oswald;
+}
+
+#slide4 {
+  background: #222;
+}

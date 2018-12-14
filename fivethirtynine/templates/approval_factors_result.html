@@ -1,0 +1,58 @@
+<DOCTYPE html>
+<html>
+  <head>
+    <link rel="shortcut icon" href="/static/img/favicon.ico"/>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/css/approval_factors_results.css">
+    <title>CIS550 Project | Result</title>
+  </head>
+  
+<body>
+
+<!--first table-->
+<section>
+  <!--for demo wrap-->
+  <h1>President Highest Approval and Scenario </h1>
+  <div class="tbl-header"">
+    <table border="1" cellpadding="0" cellspacing="0" class="w3-table-all w3-hoverable">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Maximum Approval</th>
+          <th>Change in S&P500 (%)</th>
+          <th>Twitter Trending Topics</th>
+          <th>NYT Headlines</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+        {% for row in approval_extremes_data %}
+            <tr>
+            {% for d in row %}
+                <td>{{ d }}</td>
+            {% endfor %}
+            </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="timing">
+    <h2>Queries took {{ query_time }} seconds to load</h2>
+  </div>
+
+</body>
+
+<script>
+// '.tbl-content' consumed little space for vertical scrollbar, scrollbar width depend on browser/os/platfrom. Here calculate the scollbar width .
+$(window).on("load resize ", function() {
+  var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
+  $('.tbl-header').css({'padding-right':scrollWidth});
+}).resize();
+
+
+</script>

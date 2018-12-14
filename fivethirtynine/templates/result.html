@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/css/stylin.css">
+    <title>CIS550 Project | Result</title>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Data for {{ the_date }}</h1>
+    </div>
+    <div id="instructions-wrapper">
+      <div id="instructions-header">Date: {{ the_date }}</div>
+      <br><br>
+      <div id="instructions-header">DJIA On This Day: {{ djia_data }}</div>
+      <br><br>
+      <div id="instructions-header">Generic Pollist Data On This Day: {{ generic_data }}</div>
+      <br><br>
+      <div id="instructions-header">S&amp;P500 On This Day: {{ sp500_data }}</div>
+      <br><br>
+      <div id="instructions-header">NASDAQ On This Day: {{ nasdaq_data }}</div>
+      <br>
+    </div>
+    <br>
+
+    <br><br>
+    <a href="/" class="button">Back</a>
+
+  </body>
+</html>

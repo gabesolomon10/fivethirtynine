@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<link rel="stylesheet" href="/static/css/approval_extremes_results.css">
+    <meta charset="UTF-8">
+    <title>CIS550 Project | Result</title>
+	  <link rel="shortcut icon" href="/static/img/favicon.ico"/>
+  </head>
+  <body>
+    <div class="header">
+      <h1 align="center"> President Highest Approval and Scenario </h1>
+    </div>
+    <div id="instructions-wrapper">
+      <br><br>
+      <!-- <div id="instructions-header">{{ nyt_data }}</div>c -->
+      <!-- Following table syntax comes from:
+	   https://stackoverflow.com/questions/43310475/python-how-to-display-data-from-a-mysql-query-in-a-table-on-a-flask-app -->
+	   
+      <div style="overflow-x:auto;"><table border="1" cellpadding="5" cellspacing="5" class="w3-table-all w3-hoverable">
+        <tr>
+          <th>Date</th>
+          <th>Maximum Approval</th>
+		  <th>Change in S&P500 (%)</th>
+		  <th>Twitter Trending Topics</th>
+		  <th>NYT Headlines</th>
+        </tr>
+    {% for row in approval_extremes_data %}
+        <tr>
+        {% for d in row %}
+            <td>{{ d }}</td>
+        {% endfor %}
+        </tr>
+    {% endfor %}
+</table><div>
+      <br><br>
+      <br>
+    </div>
+    <br>
+
+    <br><br>
+    <a href="#" class = "button" onclick="history.go(-1)">Back</a> <!--returns to previous page-->
+
+    <div class="timing">
+      <h2>Queries took {{ query_time }} seconds to load</h2>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+  <head>
+    <link rel="stylesheet" href="/static/css/parallax_keywords.css">
+    <title>CIS550 Project | Home</title>
+    <link rel="shortcut icon" href="/static/img/favicon.ico"/>
+  </head>
+
+  <body>
+    <div id="title" class="slide header">
+      <h1>News Headlines, Twitter Topics & Daily Approval Rating Changes</h1>
+      <br>
+      <h2>Explore approval rating changes based on event topic</h2>
+    </div>
+
+<div id="slide1" class="slide">
+  <div class="title">
+    <h1>Search New York Times Headlines and Twitter by Keyword</h1>
+    <!--<p>Type a date in format 'MM/DD/YYYY' to explore the top 10 extremes of presidential approval polls.</p>-->
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="errors">
+          <h3>Errors:</h3>
+          <ul class=flashes>
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+    {% endwith %}
+    {% block body %}{% endblock %}
+
+    <form method=post enctype=multipart/form-data>
+        <h5>Please Choose Desired Data Source</h5>
+        <input type="radio" name="search_source" value="nyt" required>New York Times<br>
+        <input type="radio" name="search_source" value="twr"> Twitter<br>
+        <h5>Please Enter a Keyword</h5><input type=text name=user_keyword placeholder='Enter Keyword Here' required>
+        <input type=reset value=Refresh>
+        <input type=submit value=Upload id="upload-button">
+      </form>
+
+      <br>
+      <a style="margin-left:45%;" href="javascript:history.back()" class="button">Back</a>
+  </div>
+</div>
+
+<div id="slide4" class="slide header">
+    <h1>Explore other sections for more political insights!</h1>
+</div>
+  </body>
+</html>

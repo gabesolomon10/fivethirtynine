@@ -1,0 +1,51 @@
+<!doctype html>
+  <head>
+    <link rel="stylesheet" href="/static/css/presidential_factors.css">
+    <title>CIS550 Project | Home</title>
+    <link rel="shortcut icon" href="/static/img/favicon.ico"/>
+  </head>
+
+  <body>
+    <div id="title" class="slide header">
+  <h1>Presidential Approval Factors</h1>
+  <br>
+  <h2>Discover Trump's highest and lowest approval ratings.</h2>
+</div>
+
+<div id="slide1" class="slide">
+  <div class="title">
+    <h1>Top 10 President's approval and disapproval</h1>
+    <p>Type a date in format 'MM/DD/YYYY' to explore the top 10 extremes of presidential approval polls.</p>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="errors">
+          <h3>Errors:</h3>
+          <ul class=flashes>
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+    {% endwith %}
+    {% block body %}{% endblock %}
+
+    <form method=post enctype=multipart/form-data>
+      <h5>From:</h5><input type="date" name=first_date placeholder='MM/DD/YYYY' min="2018-01-01" max="2018-12-13">
+      <h5>To:</h5><input type="date" name=second_date placeholder='MM/DD/YYYY' min="2018-01-01" max="2018-12-13">
+
+      <h5>Approval or Disapproval:</h5>
+      <input type="radio" name=approval_or_disapproval value="approval">Approval Extreme<br>
+      <input type="radio" name=approval_or_disapproval value="disapproval">Disapproval Extreme<br>
+      <input type="radio" name=approval_or_disapproval value="top 5">Top 5 Changes in Approval<br>
+      <input type=submit value=Search id="upload-button">
+
+    </form>
+  </div>
+</div>
+
+<div id="slide4" class="slide header">
+    <h1>Explore other sections for more political insights!</h1>
+</div>
+  </body>
+</html>

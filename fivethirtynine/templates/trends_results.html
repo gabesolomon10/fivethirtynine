@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<head>
+
+    <link rel="shortcut icon" href="/static/img/favicon.ico"/>
+
+	<link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-0.13.0.min.css" type="text/css"/>
+    <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-widgets-0.13.0.min.css" type="text/css"/>
+    <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-tables-0.13.0.min.css" type="text/css">
+
+	<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.13.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-api-0.13.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-widgets-0.13.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-tables-0.13.0.min.js"></script>
+	
+    <link rel="shortcut icon" href="/static/img/favicon.ico"/>
+
+	<style>
+
+    @import url(https://fonts.googleapis.com/css?family=Ovo);
+
+
+        #inner {
+            position: relative;
+            left: 350px;
+            bottom: 150px;
+        }
+
+        .button {
+            background-color: white;
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 15px;
+            padding: 16px 32px;
+            
+            cursor: pointer;
+        }
+
+        .button a {
+          text-decoration: none;
+          color: black;
+          font-family: Ovo;
+        }
+
+
+        .timing {
+          background:rgba(249, 247, 246, 0.5);
+          display:inline-block;
+          margin-left:35%;
+          text-align:center;
+        }
+		
+	</style>
+
+</head>
+	
+	<body>
+        <style>
+      body{margin-top:20%;
+        background-image:url("/static/img/capitol.jpg");
+        background-repeat: no-repeat;
+        background-position:center;
+        background-size:cover;
+      }
+
+    </style>
+
+</script>
+
+
+
+
+		<div id="inner">
+			{{ div|safe }}
+			{{ script|safe }}
+		</div>
+
+	<br>
+    <a style="margin-left:45%;" href="/trends" class="button">Back</a>
+
+    <div class="timing">
+            <h2>Queries took {{ query_time }} seconds to load</h2>
+            <h2>Page took {{ load_time }} seconds to load</h2>
+    </div>
+
+
+	</body>
+</html>

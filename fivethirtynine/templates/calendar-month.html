@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+    <title>Monthly Calendar</title>
+
+    <link rel="stylesheet" href="/static/css/stylin.css">
+
+    <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-0.13.0.min.css" type="text/css"/>
+    <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-widgets-0.13.0.min.css" type="text/css"/>
+    <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-tables-0.13.0.min.css" type="text/css">
+
+    <link href="/static/css/stylin.css" rel="stylesheet" >
+
+    <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.13.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-api-0.13.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-widgets-0.13.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-tables-0.13.0.min.js"></script>
+    
+    <link rel="shortcut icon" href="/static/img/favicon.ico"/>
+   </head>
+
+    <body>
+        <style>
+          body{margin-top:3%;
+            background-image:url("/static/img/lincoln_memorial.jpg");
+            background-repeat: no-repeat;
+            background-position:center;
+            background-size:cover;
+          }
+
+        </style>
+        <h1 class='monthly-calendar-header'>Monthly Calendar for {{ current_month }}</h1>
+        <div class="monthly-calendar">
+            {{ div|safe }}
+            {{ script|safe }}
+        </div>
+
+        <div class="timing">
+            <h2>Queries took {{ query_time }} seconds to load</h2>
+            <h2>Page took {{ load_time }} seconds to load</h2>
+        </div>
+        <br>
+        <a style="margin-left:45%;" href="/calendar-month-home/" class="button">Back</a>
+    </body>
+</html>

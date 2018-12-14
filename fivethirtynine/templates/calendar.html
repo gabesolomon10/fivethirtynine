@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+    <title>Annual Calendar</title>
+
+    <link rel="stylesheet" href="/static/css/stylin.css">
+
+    <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-0.13.0.min.css" type="text/css"/>
+    <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-widgets-0.13.0.min.css" type="text/css"/>
+    <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-tables-0.13.0.min.css" type="text/css">
+
+    <link href="/static/css/stylin.css" rel="stylesheet" >
+
+    <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.13.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-api-0.13.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-widgets-0.13.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-tables-0.13.0.min.js"></script>
+    
+    <link rel="shortcut icon" href="/static/img/favicon.ico"/>
+   </head>
+
+    <body>
+        <style>
+          body{margin-top:3%;
+            background-image:url("/static/img/lincoln_memorial.jpg");
+            background-repeat: no-repeat;
+            background-position:center;
+            background-size:cover;
+          }
+
+        </style>
+        <h1 class='annual-calendar-header'>Annual Calendar 2018</h1>
+        <h3 style="text-align:center;">Hover over a date to see presidential approval rating, holidays, U.S. stock data, New York Times 
+            headlines, &amp; trending Twitter topics!
+        </h3>
+        <h3 style="text-align:center;">Each date is color-coded according to the average of Nasdaq, S&amp;P500, Dow Jones Industrial Average,
+            presidential approval rating, <br> and generic pollist data (green=higher average, red=lower average).
+        </h3>
+        <div class='annual-calendar'>
+            {{ div|safe }}
+            {{ script|safe }}
+        </div>
+
+        <div class="timing">
+            <h2>Queries took {{ query_time }} seconds to load</h2>
+            <h2>Page took {{ load_time }} seconds to load</h2>
+        </div>
+        <br>
+        <a style="margin-left:45%;" href="/" class="button">Back</a>
+    </body>
+</html>

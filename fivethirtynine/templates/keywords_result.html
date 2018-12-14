@@ -1,0 +1,95 @@
+<DOCTYPE html>
+<html>
+  <head>
+    <link rel="shortcut icon" href="/static/img/favicon.ico"/>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/css/keywords_results.css">
+    <title>CIS550 Project | Result</title>
+  </head>
+
+
+
+<body>
+
+<!--first table-->
+<section>
+  <!--for demo wrap-->
+  <h1>Most Recent Headlines Matching <q>{{user_keyword}}</q> (up to 20)</h1>
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Headline</th>
+          <th>Sub-Headline</th>
+          <th>Change in Approval Rating from previous Day (%)</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+        {% for row in nyt_data %}
+            <tr>
+            {% for d in row %}
+                <td>{{ d }}</td>
+            {% endfor %}
+            </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<!--second table-->
+<section>
+  <!--for demo wrap-->
+  <h1>Total Headlines by Month Matching <q>{{user_keyword}}</q></h1>
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>Year</th>
+          <th>Month</th>
+          <th>Total Headlines Containing <q>{{user_keyword}}</q></th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+        {% for row in nyt_monthly %}
+            <tr>
+            {% for d in row %}
+                <td>{{ d }}</td>
+            {% endfor %}
+            </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<div class="timing">
+    <h2>Queries took {{ query_time }} seconds to load</h2>
+</div>
+<br>
+<a style="margin-left:45%;" href="javascript:history.back()" class="button">Back</a>
+
+
+
+
+</body>
+
+<script>
+// '.tbl-content' consumed little space for vertical scrollbar, scrollbar width depend on browser/os/platfrom. Here calculate the scollbar width .
+$(window).on("load resize ", function() {
+  var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
+  $('.tbl-header').css({'padding-right':scrollWidth});
+}).resize();
+
+</script>
